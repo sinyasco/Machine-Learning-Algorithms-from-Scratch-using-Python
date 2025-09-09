@@ -65,5 +65,7 @@ X_test = np.array([
 ])
 
 preds = model.predict(X_test)
+
 print("\nTest samples:\n", X_test)
+
 print("Predicted labels:", preds)
