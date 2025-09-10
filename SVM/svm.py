@@ -27,3 +27,45 @@ class SVM:
     def predict(self,X):
         linear = np.dot(X, self.w) + self.b
         return np.sign(linear)
+    
+# Training data
+X_train = np.array([
+    [2, 3],
+    [4, 5],
+    [6, 2],
+    [7, 8],
+    [8, 5],
+    [9, 7],
+    [10, 4]
+])
+
+# Labels: 1 if sum > 10, else -1
+y = np.array([-1, -1, -1, 1, 1, 1, 1])
+
+y_train = np.array([-1, -1, -1, 1, 1, 1, 1])  # -1 if sum<=10, else +1
+
+# Train model
+model = SVM(lr=0.001, lambdaa=0.01, n_iters=1000)
+model.fit(X_train, y_train)
+
+
+# TEST DATA (new, unseen points)
+X_test = np.array([
+    [1, 8],   # sum=9 → should be -1
+    [12, 2],  # sum=14 → should be +1
+    [3, 4],   # sum=7 → should be -1
+    [9, 9],   # sum=18 → should be +1
+    [5, 6]    # sum=11 → should be +1
+])
+
+y_test = np.array([-1, 1, -1, 1, 1])  # true labels
+
+# Predictions
+preds = model.predict(X_test)
+
+print("Test predictions:", preds)
+print("True labels:     ", y_test)
+
+# Compute accuracy
+accuracy = np.mean(preds == y_test)
+print("Accuracy on test data:", accuracy)
