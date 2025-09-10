@@ -21,9 +21,9 @@ class SVM:
                 if cndt:
                     self.w -= self.lr * 2*self.lambdaa*self.w
                 else:
-                    self.w -= self.lr * 2*self.lambdaa*self.w - np.dot(x_i,y_[idx])
+                    self.w -= self.lr * 2*self.lambdaa*self.w - y_[idx] * x_i
                     self.b -= self.lr * y_[idx]
 
     def predict(self,X):
-        linear = np.dot(X, self.w) - self.b
+        linear = np.dot(X, self.w) + self.b
         return np.sign(linear)
