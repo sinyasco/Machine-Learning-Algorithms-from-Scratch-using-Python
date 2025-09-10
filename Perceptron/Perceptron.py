@@ -43,8 +43,8 @@ X = np.array([
 ])
 y = np.array([0, 1, 1])  
 
-clf = Perceptron(lr=0.01, n_iters=10)
-clf.fit(X, y)
+model = Perceptron(lr=0.01, n_iters=10)
+model.fit(X, y)
 X2 = np.array([[100,1]])
-preds = clf.predict(X2)
+preds = model.predict(X2)
 print("Predictions:", preds)
