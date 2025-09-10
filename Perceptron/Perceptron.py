@@ -35,7 +35,7 @@ class Perceptron:
     return np.where(x>=0 , 1 ,0 )
   
 
-#small data set - OR
+#small data set - OR gate
 
 X = np.array([
     [0, 0],
