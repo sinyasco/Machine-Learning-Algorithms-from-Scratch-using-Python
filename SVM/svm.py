@@ -1,6 +1,5 @@
 import numpy as np
 
-#svm
 class SVM:
     def __init__(self,lr=0.001,lambdaa=0.01,n_iters=1000):
         self.lr = lr
