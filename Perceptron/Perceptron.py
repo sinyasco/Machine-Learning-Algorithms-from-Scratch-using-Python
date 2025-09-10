@@ -35,7 +35,7 @@ class Perceptron:
     return np.where(x>=0 , 1 ,0 )
   
 
-#simple data set
+#simple data set - OR
 
 X = np.array([
     [0, 0],
