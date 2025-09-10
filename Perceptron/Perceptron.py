@@ -33,3 +33,18 @@ class Perceptron:
 
   def unitStepFunction(self,x):
     return np.where(x>=0 , 1 ,0 )
+  
+
+# OR dataset
+X = np.array([
+    [0, 0],
+    [0, 23],
+    [16, 0]
+])
+y = np.array([0, 1, 1])  
+
+clf = Perceptron(lr=0.01, n_iters=10)
+clf.fit(X, y)
+X2 = np.array([[100,1]])
+preds = clf.predict(X2)
+print("Predictions:", preds)
